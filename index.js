@@ -1,4 +1,4 @@
-// data tyoe
+// data type
 
 const number = 80
 console.log(number)

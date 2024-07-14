@@ -1,4 +1,4 @@
-// chapter 2
+// Chapter 2
 
 // Array Operation
 
@@ -155,7 +155,7 @@ console.log(position);
 const numbers = [4, 9, 16, 25, 29];
 const first = numbers.find(myFunction);
 
-function myFunction(value, index, array) {
+function myFunction (value, index, array) {
   return value > 18;
 }
 console.log(first)
@@ -239,7 +239,7 @@ console.log(fncExpress());
 
 // Distructuring Array
 
-const person = [`Abdullah`,`Nahid`,21];
+const person = [`Abdullah`,`Nahid`, 21];
 const [ , personName, personAge] = person;
 console.log(`I am ${personName} and my age is ${personAge}`);
 
@@ -288,3 +288,537 @@ function myExtension (){
 }
 
 printF(`Nahid Hossain`, 21, myExtension);     // Function direct extention er jaigai dewa jay
+
+// Set Timeout
+setTimeout(function(){
+  console.log(`Hello Nahid`);
+},4000);
+
+// Set Interval
+setInterval (function(){
+  console.log(`I will count in interval`);
+}, 3000);
+
+
+/* 
+
+let i = 0
+const intTime = setInterval(function(){
+     i++
+ console.log(i, `Hello Switzerland`);
+}, 100);
+               
+                     
+setTimeout(function(){
+  clearInterval(intTime);
+}, 5000 + 100);
+
+*/
+
+// Array.forEach
+
+const arrNum = [3,5,6,8,6];
+
+arrNum.forEach(function(value){
+    console.log(value);
+});
+
+
+
+ /* 
+ const arrInArr = [[1,4,6],[3,5,7],[4,7,8]];
+
+ arrInArr.forEach(function (inArr) {
+   inArr.forEach(function(data){
+       console.log(data);
+    });
+              
+  }); 
+
+  */
+
+
+// Map
+
+const numberArr = [2,4,6,7,5];
+
+const res = numberArr.map(function(num){
+    return num ** 2
+});
+
+console.log(res);
+
+// Filter
+
+const allNum = [12,33,45,64,68,77];
+const findEvenNum = allNum.filter(function(value){
+    return value % 2 === 0
+},[] )
+  
+console.log(findEvenNum);
+
+// Find
+
+const allNumHere = [12,33,45,64,68,77];
+const findNum = allNum.find(function(value){
+    return value % 2 === 0
+}, [] )
+
+console.log(findNum);
+
+
+// Every 
+
+const dataEvery = [12,33,45,64,68,77];
+const everyNum = dataEvery.every(function(value){
+    return value % 2 === 0       
+                 // Every data same condition mane kina
+});
+
+console.log(everyNum);
+
+
+// Some 
+
+const allNum3 = [12,33,45,64,68,77];
+const someNum = allNum3.some(function(value){
+    return value % 2 === 0    
+}, [] )            // Ontoto 1 data same condition mane kina
+
+console.log(someNum);
+
+
+// Sort
+
+const fruitsList = [`Guava`, `Apple`, `Litchies`, `Banana`];
+
+const fruitRes = fruitsList.sort();
+
+console.log(fruitRes);
+
+
+/* const fruitsList = [234,2,3,454,6,11,22];
+
+const fruitRes = fruitsList.sort(function(a,b){
+  return a-b
+});
+
+console.log(fruitRes); */
+
+
+// Reduce
+
+const red = [3,5,6,44,32];
+
+const redRes = red.reduce(function(acc, curr){
+    acc.push(curr ** 2)
+      return acc
+}, [])
+
+console.log(redRes);
+
+ 
+
+/* const red = [3,5,6,44,32];
+
+const redRes = red.reduce(function(prev, next){
+    prev += next
+      return prev
+}, 0)
+
+console.log(redRes) */
+
+
+
+/* const red = [3,3,3,3,3];
+
+const redRes = red.reduce(function(prev, next, i){
+    if ( i === 0){
+        prev += next
+    } else {
+        prev += `, ` + next;
+    }
+      return prev
+}, ``)
+
+console.log(redRes) */
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+// Chapter 3
+
+// Object
+
+const person = {
+  personName: `Nahid Hossain`,
+  personAge: 21,
+  personDistrict: `Meherpur`,
+  varsity: `Islamic University`,
+  result: 4.00
+
+}
+
+Object.keys(person).forEach(function(key){
+  console.log(person[key])
+});
+
+
+/* for(key in person){                 /* for in = object
+   console.log(person[key])            /*  for of = array
+ }                           
+
+*/
+
+
+ const person = {
+    personName: `Nahid Hossain`,
+    personAge: 21,
+    personDistrict: `Meherpur`,
+    varsity: `Islamic University`,
+    result: 4.00,
+    callNahid: function(){
+      console.log( this.personName)
+    },
+    sayHello: function(){
+      console.log(`Hello`)
+      this.callNahid();
+    }
+
+}
+
+Object.keys(person).forEach(function(key){
+    if(typeof person[key] === `function` ) { 
+        person[key]();
+    } else {
+        console.log(person[key])
+    }
+});
+
+
+/*------------*/
+
+console.time(`Nahid`);
+
+const nam = `Hello Rangamati`
+console.log(nam);
+
+console.timeEnd(`Nahid`);
+
+/*------------*/
+
+
+const newArr = function () {
+  let mainArr  = [];
+for(let i = 1; i<=100; i++){
+   mainArr.push(i)
+}
+return (mainArr)
+}
+
+const myArr = newArr();
+
+myArr.splice(44, 1)
+
+console.log(myArr)
+
+
+
+
+// DOM--------------------------------------------------
+
+
+console.dir(document)  /* object akare document k dekhabe */
+
+<h1>Hello World</h>
+
+<script>
+  const h1 = document.querySelector(`h1`)
+ console.dir(h1)
+
+</script>
+
+
+// 
+
+const person = {
+
+}
+
+person.varsity = `IU`
+person.subject = `ICT`  /* property input */
+
+console.log(person)
+
+// 
+
+<div> Nahid </div>
+
+const div = document.querySelector(`div`)
+
+div.innerText = `Hasib`
+
+// 
+
+<div class="country"> India </div>
+
+s
+const country = document.querySelector(.country)  
+
+/* aro div thakle sb dhorte querySelectorAll dibo */ /* tkhn array er moto [Nodelist] return kore */ /* Array.from() korle Array chole ashbe */
+
+country.innerHTML = `<b> ${country.innerText} </b>` 
+s
+
+// Class Add or Remove
+
+<div class="country "> Bangladesh </div>
+
+s
+const country = document.querySelector(.country)  
+country.classList.add("desh", "land")
+
+country.classList.remove( "land")
+s 
+
+// Attribute
+
+<div  class="season"> Summer </div>
+
+s
+const season = document.querySelector(.season)
+
+season.setAttribute("data-nahid", "season Name"); /* any kind of attribute set kora jay evabe */
+season.removeAttribute("data-nahid")
+
+season.getAttribute("data-nahid")  /* attribute er value dekhabe ex season Name */ console.log(value)
+
+// Tittle Change
+
+const tittle = document,querySelector(`tittle`)
+innerText = `hahaha`
+
+or document.tittle = `hahaha`
+
+
+// Notification in Tittle
+
+let showMessageInTittle = false;
+let messageCount = 1
+document.tittle = "Facebook";
+
+setInterval(function(){
+   if(showMessageInTittle){
+    document.tittle = `Facebook (${messageCount})`
+    messageCount++;
+
+   } else {
+    document.tittle = "Facebook"
+   }
+   
+   showMessageInTittle = !showMessageInTittle;
+}, 1*1000)
+
+
+// ------------------------------------------------------------------
+
+// Alert
+
+alert(`Don't cross!`)
+
+// Prompt
+
+const dataCollect = prompt(`What is Your Name?`)
+console.log(dataCollect)
+
+
+
+
+// EventListener
+
+/* click */
+const btn = document.querySelector(`.btn`);
+
+btn.addEventListener(`click`,function(){
+  const p  = document.querySelector(`p`)
+
+p.style.color = `red`;
+p.style.backgroundColor = `yellow`
+})
+
+
+/* Input */ /* Change */
+
+const fullname = document.querySelector(`.fullname`)
+
+fullname.addEventListener(`input`, function(){
+const notice = document.querySelector(`.notice`)
+
+    if(fullname.value === `nahid`){
+      notice.style.display = "block"
+    } else {
+      notice.style.display = "none"
+    }
+})
+
+
+/* Scroll */
+const btn = document.querySelector(`.btn`)
+
+window.addEventListener(`scroll`,function(){
+
+  if(scrollY > 0){
+    btn.style.visibility = `visble`
+    btn.style.opacity = `1`
+    btn.style.transition.opacity = `0.5s` // ei style css file er
+  } else{
+    btn.style.opacity = `0`
+    btn.setTimeout(function(){
+    btn.style.visibility = `hidden`
+
+  }, 0.5 * 1000)
+
+  }
+
+})
+
+btn.addEventListener(`click`,function(){
+  scrollTo(0, 0);
+})
+
+
+/* wheel
+   mouseover
+   mouseleave
+   dblclick
+*/
+
+
+// PreventDefault
+
+const prevent = document.querySelector(`.prevent`)
+
+prevent.addEventListener(`click`, function(event){
+ event.preventDefault();
+})
+
+
+// LocationRedirectByJS
+
+const text = document.querySelector(`.text`);
+
+function redirect(){
+  location.href = `http://facebook.com`
+}
+
+text.addEventListener(`click`, redirect)    
+
+
+// Element
+
+// Create Element & Append
+
+const root = document.querySelector(`.class`)
+
+const div = document.createElement(`div`)
+div.style.color = `red`
+
+root.append(div)  // prepend korle upore add hoy
+
+
+// Nested Element Query
+
+const div = document.querySelector(`.nahid`)
+
+const hasib = nahid.querySelector(`hasib`)
+
+
+// Data Insertion By Looping
+
+const menuData = [
+  `Home`,
+  `Contact`,
+  `About`,
+  `Gallery`
+]
+
+const menu = document.querySelector(`.menu`)
+
+const fragment = document.createDocumentFragment(`div`)
+
+menuData.forEach(function(menuText){
+    const li = document.createElement(`li`);
+    li.innerText = menuText;
+    middleElement.append(li)
+})
+
+menu.append(fragment)
+
+
+
+// parent Children
+
+const listItem = document.querySelector(`.list-item`);
+
+console.log(listItem.parentElement)
+
+// 
+
+const menu = document.querySelector(`.menu`)       /* <ul> 
+                                                         <li> */
+console.log(menu.children[1].children)              /* </ul>
+                                                            <li>facebook </li>
+     /* children
+        parentElement                                   
+        parentNode */                     
+
+const nahid = document.querySelector(`.nahid`)
+
+const hasib = nahid.nextElementSibling;
+const hasib = nahid.previousElementSibling;
+
+console.log(hasib)
+
+
+const container = document.querySelector(`.container`)
+
+console.log(container.lastElementChild)
+
+const container = document.querySelector(`.container`)
+
+console.log(container.firstElementChild)
+
+
+// Remove Element
+
+const nahid = document.querySelector(`.nahid`)
+
+nahid.remove();
+
+
+// Funtion Call from Another File
+
+<script type="module" src = "app.js">  </script>
+ <script src="nahid.js">  </script>
+
+
+ app.js
+
+function sayHelloWorld (){
+    console.log("hello world")
+}
+
+export default sayHelloWorld;    // default na hole {sayHelloWorld} dibo..default only 1 function er jonno ... ekadhik function hole , diye export & , diye import...default rekhe duita export korte chaile [] er vitore , diye pathabo....array index akare 
+// sayHelloWorld[0]()evabe call korbo
+
+// default rekhe object akare korle {"sayHelloWorld": sayHelloWorld, "sayBangladesh": hello bangladesh} & ja diye import seta diye . diye key call....obosso object a key & value eki nam hole just value nilei hoy .... js er default behaviour eta
+
+
+nahid.js
+
+import sayHelloWorld from './app.js'    
+
+// tokkho ekhaneo {sayHelloWorld} dite hobe..& same nam diye same call    // onno nam diye call korte chaile sayHelloWorld as nahid evabe diye nahid(); call
+
+sayHelloWorld();       
